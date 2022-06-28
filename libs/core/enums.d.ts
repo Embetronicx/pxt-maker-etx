@@ -29,5 +29,9 @@
     //% block="none"
     PullNone = 2,
     }
+declare namespace basic {
+}
+declare namespace led {
+}
 
 // Auto-generated. Do not edit. Really.
