@@ -7,7 +7,19 @@
         "out": "../built/sim.js",
         "rootDir": ".",
         "newLine": "LF",
+        "moduleResolution": "node",
         "sourceMap": false,
-        "typeRoots": ["../node_modules/@types"]
-    }
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "scripthost",
+            "es2017"
+        ]
+    },
+    "include": [
+        "*.ts",
+        "state/*.ts",
+        "visuals/*.ts",
+        "node_modules/pxt-common-packages/libs/settings/sim/*.ts"
+    ]
 }
