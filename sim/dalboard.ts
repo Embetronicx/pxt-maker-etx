@@ -106,26 +106,6 @@ namespace pxsim {
             img.set(4, 1, 255);
             runtime.updateDisplay();
         }
-
-        led.setBrightness(255);
-        let img = board().ledMatrixState.image;
-        img.clear();
-        img.set(0, 0, 255);
-        img.set(0, 1, 255);
-        img.set(0, 2, 255);
-        img.set(0, 3, 255);
-        img.set(0, 4, 255);
-        img.set(2, 0, 255);
-        img.set(2, 1, 255);
-        img.set(2, 2, 255);
-        img.set(2, 3, 255);
-        img.set(2, 4, 255);
-        img.set(4, 0, 255);
-        img.set(4, 1, 255);
-        img.set(4, 2, 255);
-        img.set(4, 3, 255);
-        img.set(4, 4, 255);
-        runtime.updateDisplay();
     }
 
     if (!pxsim.initCurrentRuntime) {

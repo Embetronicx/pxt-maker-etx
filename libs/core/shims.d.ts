@@ -215,6 +215,55 @@ declare interface PwmOnlyPin {
     //% blockHidden=1 shim=PwmOnlyPinMethods::servoSetContinuous
     servoSetContinuous(continuous: boolean): void;
 }
+
+
+    /**
+     * Provides access to basic micro:bit functionality.
+     */
+
+declare namespace basic {
+
+    /**
+     * Draws an image on the LED screen.
+     * @param leds the pattern of LED to turn on/off
+     * @param interval time in milliseconds to pause after drawing
+     */
+    //% help=basic/show-leds
+    //% weight=85 blockGap=8
+    //% imageLiteral=1 async
+    //% blockId=device_show_leds
+    //% block="show leds" icon="\uf00a"
+    //% parts="ledmatrix"
+    //% group="LED matrix" interval.defl=400 shim=basic::showLeds
+    function showLeds(leds: string, interval?: int32): void;
+
+    /**
+     * Display text on the display, one character at a time. If the string fits on the screen (i.e. is one letter), does not scroll.
+     * @param text the text to scroll on the screen, eg: "hi!"
+     * @param interval how fast to shift characters; eg: 50, 100, 150, 200
+     */
+    //% help=basic/show-string
+    //% weight=100 blockGap=16
+    //% block="show|string %text || in an interval of %interval ms"
+    //% async
+    //% blockId=device_print_message
+    //% parts="ledmatrix"
+    //% text.shadowOptions.toString=true
+    //% expandableArgumentMode="toggle"
+    //%
+    //% group="LED matrix" interval.defl=80 shim=basic::showString
+    function showString(text: string, interval?: int32): void;
+
+    /**
+     * Turn off all LEDs
+     */
+    //% help=basic/clear-screen weight=75
+    //% blockId=device_clear_display block="clear screen"
+    //% parts="ledmatrix"
+    //% group="LED matrix"
+    //% advanced=true shim=basic::clearScreen
+    function clearScreen(): void;
+}
 declare namespace control {
 
     /**
@@ -313,6 +362,99 @@ declare interface SPI {
      */
     //% shim=SPIMethods::setMode
     setMode(mode: int32): void;
+}
+
+
+
+    //% color=#8169E6 weight=35 icon="\uf205"
+declare namespace led {
+
+    /**
+     * Turn on the specified LED using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
+     * @param x the horizontal coordinate of the LED starting at 0
+     * @param y the vertical coordinate of the LED starting at 0
+     */
+    //% help=led/plot weight=78
+    //% blockId=device_plot block="plot|x %x|y %y" blockGap=8
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::plot
+    function plot(x: int32, y: int32): void;
+
+    /**
+     * Turn on the specified LED with specific brightness using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
+     * @param x the horizontal coordinate of the LED starting at 0
+     * @param y the vertical coordinate of the LED starting at 0
+     * @param brightness the brightness from 0 (off) to 255 (bright), eg:255
+     */
+    //% help=led/plot-brightness weight=78
+    //% blockId=device_plot_brightness block="plot|x %x|y %y|brightness %brightness" blockGap=8
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4 brightness.min=0 brightness.max=255
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
+    //% advanced=true shim=led::plotBrightness
+    function plotBrightness(x: int32, y: int32, brightness: int32): void;
+
+    /**
+     * Turn off the specified LED using x, y coordinates (x is horizontal, y is vertical). (0,0) is upper left.
+     * @param x the horizontal coordinate of the LED
+     * @param y the vertical coordinate of the LED
+     */
+    //% help=led/unplot weight=77
+    //% blockId=device_unplot block="unplot|x %x|y %y" blockGap=8
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1 shim=led::unplot
+    function unplot(x: int32, y: int32): void;
+
+    /**
+     * Get the brightness state of the specified LED using x, y coordinates. (0,0) is upper left.
+     * @param x the horizontal coordinate of the LED
+     * @param y the vertical coordinate of the LED
+     */
+    //% help=led/point-brightness weight=76
+    //% blockId=device_point_brightness block="point|x %x|y %y brightness"
+    //% parts="ledmatrix"
+    //% x.min=0 x.max=4 y.min=0 y.max=4
+    //% x.fieldOptions.precision=1 y.fieldOptions.precision=1
+    //% advanced=true shim=led::pointBrightness
+    function pointBrightness(x: int32, y: int32): int32;
+
+    /**
+     * Get the screen brightness from 0 (off) to 255 (full bright).
+     */
+    //% help=led/brightness weight=60
+    //% blockId=device_get_brightness block="brightness" blockGap=8
+    //% parts="ledmatrix"
+    //% advanced=true shim=led::brightness
+    function brightness(): int32;
+
+    /**
+     * Set the screen brightness from 0 (off) to 255 (full bright).
+     * @param value the brightness value, eg:255, 127, 0
+     */
+    //% help=led/set-brightness weight=59
+    //% blockId=device_set_brightness block="set brightness %value"
+    //% parts="ledmatrix"
+    //% advanced=true
+    //% value.min=0 value.max=255 shim=led::setBrightness
+    function setBrightness(value: int32): void;
+
+    /**
+     * Cancels the current animation and clears other pending animations.
+     */
+    //% weight=50 help=led/stop-animation
+    //% blockId=device_stop_animation block="stop animation"
+    //% parts="ledmatrix"
+    //% advanced=true shim=led::stopAnimation
+    function stopAnimation(): void;
+
+    /**
+     * Turns on or off the display
+     */
+    //% help=led/enable blockId=device_led_enable block="led enable %on"
+    //% advanced=true parts="ledmatrix" shim=led::enable
+    function enable(on: boolean): void;
 }
 declare namespace configStorage {
 

@@ -284,6 +284,7 @@ namespace pxsim.ImageMethods {
     }
 }
 
+//%
 namespace pxsim.basic {
     export function showNumber(x: number, interval: number) {
         interval |= 0;
