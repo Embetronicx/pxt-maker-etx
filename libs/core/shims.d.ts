@@ -217,10 +217,8 @@ declare interface PwmOnlyPin {
 }
 
 
-    /**
-     * Provides access to basic micro:bit functionality.
-     */
 
+    //% color=#8169E6 weight=35 icon="\uf205"
 declare namespace basic {
 
     /**
@@ -233,8 +231,7 @@ declare namespace basic {
     //% imageLiteral=1 async
     //% blockId=device_show_leds
     //% block="show leds" icon="\uf00a"
-    //% parts="ledmatrix"
-    //% group="LED matrix" interval.defl=400 shim=basic::showLeds
+    //% parts="ledmatrix" interval.defl=400 shim=basic::showLeds
     function showLeds(leds: string, interval?: int32): void;
 
     /**
@@ -250,8 +247,7 @@ declare namespace basic {
     //% parts="ledmatrix"
     //% text.shadowOptions.toString=true
     //% expandableArgumentMode="toggle"
-    //%
-    //% group="LED matrix" interval.defl=80 shim=basic::showString
+    //% interval.defl=80 shim=basic::showString
     function showString(text: string, interval?: int32): void;
 
     /**
@@ -259,10 +255,26 @@ declare namespace basic {
      */
     //% help=basic/clear-screen weight=75
     //% blockId=device_clear_display block="clear screen"
-    //% parts="ledmatrix"
-    //% group="LED matrix"
-    //% advanced=true shim=basic::clearScreen
+    //% parts="ledmatrix" shim=basic::clearScreen
     function clearScreen(): void;
+
+    /**
+     * Repeats the code forever in the background. On each iteration, allows other codes to run.
+     * @param body code to execute
+     */
+    //% help=basic/forever weight=55 blockGap=16 blockAllowMultiple=1 afterOnStart=true
+    //% blockId=device_runforever block="runforever" icon="\uf01e" shim=basic::runforever
+    function runforever(a: () => void): void;
+
+    /**
+     * Pause for the specified time in milliseconds
+     * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
+     */
+    //% help=basic/pause weight=50
+    //% async block="pause_ms (ms) %pause" blockGap=16
+    //% blockId=device_pause_ms icon="\uf110"
+    //% pause.shadow=timePicker shim=basic::pause_ms
+    function pause_ms(ms: int32): void;
 }
 declare namespace control {
 

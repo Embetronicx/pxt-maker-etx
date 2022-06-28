@@ -1,9 +1,7 @@
 #include "pxt.h"
 
 
-/**
- * Provides access to basic micro:bit functionality.
- */
+//% color=#8169E6 weight=35 icon="\uf205"
 namespace basic {
 
     /**
@@ -17,7 +15,6 @@ namespace basic {
     //% blockId=device_show_leds
     //% block="show leds" icon="\uf00a"
     //% parts="ledmatrix"
-    //% group="LED matrix"
     void showLeds(ImageLiteral_ leds, int interval = 400) {
     }
 
@@ -35,7 +32,6 @@ namespace basic {
     //% text.shadowOptions.toString=true
     //% expandableArgumentMode="toggle"
     //% interval.defl=80
-    //% group="LED matrix"
     void showString(String text, int interval = 80) {
     }
 
@@ -45,8 +41,28 @@ namespace basic {
     //% help=basic/clear-screen weight=75
     //% blockId=device_clear_display block="clear screen"
     //% parts="ledmatrix"
-    //% group="LED matrix"
-    //% advanced=true
     void clearScreen() {
+    }
+
+    /**
+     * Repeats the code forever in the background. On each iteration, allows other codes to run.
+     * @param body code to execute
+     */
+    //% help=basic/forever weight=55 blockGap=16 blockAllowMultiple=1 afterOnStart=true
+    //% blockId=device_runforever block="runforever" icon="\uf01e"
+    void runforever(Action a) {
+      runForever(a);
+    }
+
+    /**
+     * Pause for the specified time in milliseconds
+     * @param ms how long to pause for, eg: 100, 200, 500, 1000, 2000
+     */
+    //% help=basic/pause weight=50
+    //% async block="pause_ms (ms) %pause" blockGap=16
+    //% blockId=device_pause_ms icon="\uf110"
+    //% pause.shadow=timePicker
+    void pause_ms(int ms) {
+      fiber_sleep(ms);
     }
 }
