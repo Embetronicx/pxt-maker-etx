@@ -1,12 +1,3 @@
-async function delay<T>(duration: number, value: T | Promise<T>): Promise<T>;
-async function delay(duration: number): Promise<void>
-async function delay<T>(duration: number, value?: T | Promise<T>): Promise<T> {
-    // eslint-disable-next-line
-    const output = await value;
-    await new Promise<void>(resolve => setTimeout(() => resolve(), duration));
-    return output;
-}
-
 namespace pxsim {
     export enum DisplayMode {
         bw,
@@ -340,7 +331,7 @@ namespace pxsim.basic {
         thread.forever(body)
     }
 
-    export function KeepWaitAsync(ms: number) {
+    export function KeepWait(ms: number) {
         return thread.pause(ms)
     }
 }
