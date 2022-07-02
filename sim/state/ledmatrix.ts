@@ -284,7 +284,6 @@ namespace pxsim.ImageMethods {
     }
 }
 
-//%
 namespace pxsim.basic {
     export function showNumber(x: number, interval: number) {
         interval |= 0;
@@ -326,6 +325,14 @@ namespace pxsim.basic {
 
     export function plotLeds(leds: Image): void {
         ImageMethods.plotImage(leds, 0);
+    }
+
+    export function runforever(body: RefAction): void {
+        thread.forever(body)
+    }
+
+    export function KeepWait(ms: number) {
+        return thread.pause(ms)
     }
 }
 
