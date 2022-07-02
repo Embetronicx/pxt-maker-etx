@@ -29,6 +29,8 @@
     //% block="none"
     PullNone = 2,
     }
+declare namespace basic {
+}
 declare namespace led {
 }
 
