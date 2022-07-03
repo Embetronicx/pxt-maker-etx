@@ -235,68 +235,107 @@ namespace pxsim.visuals {
     `;
     const BOARD_SVG = `<?xml version="1.0" encoding="utf-8"?>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px"
-         y="0px" viewBox="0 0 580 630" style="enable-background:new 0 0 580 630;" xml:space="preserve">
+         y="0px" viewBox="0 0 500 408" style="enable-background:new 0 0 580 630;" xml:space="preserve">
     <style type="text/css">
-        .st0{fill:#0A613F;}
-        .st6{fill:none;stroke:#FFFFFF;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:10;}
+        .st0{fill:#111;}
+        .st1{fill:#111;}
+        .st2{fill:#111;}
+        .st3{fill:#111;}
+        .st4{fill:#111;}
+        .st6{fill:#FFFFFF;stroke:#FFFFFF;stroke-width:1.5;stroke-linecap:round;stroke-miterlimit:10;}
         .st13{fill:#BCCAC3;}
         .st16{fill:#BCCAC3;}
     </style>
     <g id="calliope_mini">
-        <path id="mini_Board" class="st0" d="M100,180 h400 a20,20 0 0 1 20,20 v200 a20,20 0 0 1 -20,20 h-470 a20,20 0 0 1 -20,-20 v-200 a20,20 0 0 1 20,-20 z" fill="#177a00"/>
-        <path d="M485 295 v-1.554h9.325v1.554h-9.325zm0-5.052v-1.554h9.325v1.554h-9.325zm0-5.049v-1.554h9.325v1.554h-9.325zm0 15.151v-1.555h9.325v1.555h-9.325zm0 5.052v-1.555h9.325v1.555h-9.325z" fill="#dcdcdc"/>
-        <path d="M490 78.636 V274.785h1.943v38.85l-1.943.001z" fill="#b4b4b4"/>
-        <path d="M492 78.636V274.785h8.157v38.85l-8.157.001z"/>
-        <rect x="495" y="255" width="40" height="80" style="fill:grey;" />
-        <rect x="350" y="245" width="100" height="100" style="fill:black;" />
-        <text x="373" y="300" fill="white">RP2040</text>
-    <g id="Button_A">        
-        <rect id="BTN_A_BOX" x="25" y="210" class="st13" width="40" height="40"/>
-        <circle cx="60" cy="215" r="3"/>
-        <circle cx="60" cy="245" r="3"/>
-        <circle cx="30" cy="215" r="3"/>
-        <circle cx="30" cy="245" r="3"/>
-        <circle id="BTN_A" class="st15" cx="45" cy="230" r="15"/>
-        <text x="25" y="270" fill="#FFF402">RESET</text>
+        <path id="mini_Board" class="st0" d="M498,31.9C498,14.3,483.7,0,466.1,0H31.9C14.3,0,0,14.3,0,31.9v342.2C0,391.7,14.3,406,31.9,406h434.2c17.6,0,31.9-14.3,31.9-31.9V31.9z M14.3,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.7,2.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C19.2,204.6,17,206.7,14.3,206.7z M486.2,206.7c-2.7,0-4.8-2.2-4.8-4.8c0-2.72.2-4.8,4.8-4.8c2.7,0,4.8,2.2,4.8,4.8C491,204.6,488.8,206.7,486.2,206.7z"/>
+      <path class="st2" d="M114.2,0H25.9C12.1,2.1,0,13.3,0,27.7v83.9L114.2,0z"/>
+      <polygon class="st2" points="115,56.7 173.1,0 115,0"/>
+      <polygon class="st2" points="173,27.9 202.5,0 173,0"/>
+      <polygon class="st2" points="54.1,242.4 54.1,274.1 22.4,274.1"/>
+      <polygon class="st2" points="446.2,164.6 446.2,132.8 477.9,132.8"/>
+      <path class="st2" d="M114.2,0H25.9C12.1,2.1,0,13.3,0,27.7v83.9L114.2,0z"/>
+      <path class="st3" d="M333.8,310.3H165.9c-8.3,0-15-6.7-15-15V127.5c0-8.3,6.7-15,15-15h167.8c8.3,0,15,6.7,15,15v167.8C348.8,303.6,342.1,310.3,333.8,310.3z"/>
+      <!-- P0 -->
+      <path class="st1" d="M16.5,341.2c0,0.4-0.1,0.9-0.1,1.3v60.7c4.1,1.7,8.6,2.7,12.9,2.7h34.4v-64.7c0,0,0-0.1,0-0.1c0-13-10.6-23.6-23.7-23.6C27.2,317.6,16.5,328.1,16.5,341.2z M21.2,341.6c0-10.7,8.7-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3c0,10.7-8.6,19.3-19.3,19.3C29.9,360.9,21.2,352.2,21.2,341.6z"/>
+      <!-- P1 -->
+      <path class="st1" d="M139.1,317.3c-12.8,0-22.1,10.3-23.1,23.1V406h46.2v-65.6C162.2,327.7,151.9,317.3,139.1,317.3zM139.3,360.1c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C158.6,351.5,150,360.1,139.3,360.1z"/>
+      <!-- P2 -->
+      <path class="st1" d="M249,317.3c-12.8,0-22.1,10.3-23.1,23.1V406h46.2v-65.6C272.1,327.7,261.8,317.3,249,317.3z M249.4,360.1c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C268.7,351.5,260.1,360.1,249.4,360.1z"/>
+      <!-- P3 -->
+      <path class="st1" d="M0,357.7v19.2c0,10.8,6.2,20.2,14.4,25.2v-44.4H0z"/>
+      <!-- Other Minor Pins -->
+      <rect x="66.7" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="79.1" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="91.4" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="103.7" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="164.3" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="176.6" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="188.9" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="201.3" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="213.6" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="275.2" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="287.5" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="299.8" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="312.1" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="324.5" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="385.1" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="397.4" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="409.7" y="356.7" class="st1" width="10" height="50"/>
+      <rect x="422" y="356.7" class="st1" width="10" height="50"/>
+      <path class="st1" d="M483.6,402c8.2-5,14.4-14.4,14.4-25.1v-19.2h-14.4V402z"/>
+      <path class="st1" d="M359.9,317.3c-12.8,0-22.1,10.3-23.1,23.1V406H383v-65.6C383,327.7,372.7,317.3,359.9,317.3z M360,360.1c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C379.3,351.5,370.7,360.1,360,360.1z"/>
+      <path class="st1" d="M458,317.6c-13,0-23.6,10.6-23.6,23.6c0,0,0,0.1,0,0.1h0V406H469c4.3,0,8.4-1,12.6-2.7v-60.7c0-0.4,0-0.9,0-1.3C481.6,328.1,471,317.6,458,317.6z M457.8,360.9c-10.7,0-19.3-8.6-19.3-19.3c0-10.7,8.6-19.3,19.3-19.3c10.7,0,19.3,8.7,19.3,19.3C477.1,352.2,468.4,360.9,457.8,360.9z"/>
+
+      <path class="st4" d="M269.9,50.2L269.9,50.2l-39.5,0v0c-14.1,0.1-24.6,10.7-24.6,24.8c0,13.9,10.4,24.4,24.3,24.7v0h39.6c14.2,0,24.8-10.6,24.8-24.7C294.5,61,284,50.3,269.9,50.2 M269.7,89.2L269.7,89.2l-39.3,0c-7.7-0.1-14-6.4-14-14.2c0-7.8,6.4-14.2,14.2-14.2h39.1c7.8,0,14.2,6.4,14.2,14.2C283.9,82.9,277.5,89.2,269.7,89.2"/>
+      <!--
+      <path class="st4" d="M230.6,69.7c-2.9,0-5.3,2.4-5.3,5.3c0,2.9,2.4,5.3,5.3,5.3c2.9,0,5.3-2.4,5.3-5.3C235.9,72.1,233.5,69.7,230.6,69.7"/>
+      <path class="st4" d="M269.7,80.3c2.9,0,5.3-2.4,5.3-5.3c0-2.9-2.4-5.3-5.3-5.3c-2.9,0-5.3,2.4-5.3,5.3C264.4,77.9,266.8,80.3,269.7,80.3"/>
+      -->
+      <text class="st4" x="232" y="80" fill="#69B31F">PICO</text>
+    <g id="Button_A">
+        <rect id="BTN_A_BOX" x="25" y="175" class="st13" width="50" height="50"/>
+        <circle cx="68" cy="180" r="3"/>
+        <circle cx="68" cy="220" r="3"/>
+        <circle cx="30" cy="180" r="3"/>
+        <circle cx="30" cy="220" r="3"/>
+        <circle id="BTN_A" class="st15" cx="50" cy="200" r="17"/>
+        <text x="28.5" y="165" fill="#69B31F">RESET</text>
     </g>
     <g id="Button_B">
         
-        <rect id="BTN_B_BOX" x="25" y="345" class="st16" width="40" height="40"/>
-        <circle cx="60" cy="350" r="3"/>
-        <circle cx="60" cy="380" r="3"/>
-        <circle cx="30" cy="350" r="3"/>
-        <circle cx="30" cy="380" r="3"/>
-        <circle id="BTN_B" class="st15" cx="45" cy="365" r="15"/>
-        <text x="15" y="405" fill="#FFF402">USR BTN</text>
+        <rect id="BTN_B_BOX" x="426" y="175" class="st16" width="50" height="50"/>
+        <circle cx="469" cy="180" r="3"/>
+        <circle cx="469" cy="220" r="3"/>
+        <circle cx="431" cy="180" r="3"/>
+        <circle cx="431" cy="220" r="3"/>
+        <circle id="BTN_B" class="st15" cx="451" cy="200" r="17"/>
+        <text x="419" y="245" fill="#69B31F">USR BTN</text>
     </g>
-
-        <rect x="115" y="215" class="st6" width="160" height="160" style="fill:none;stroke-width:3;
-stroke:rgb(0,0,0)"/>
-        <rect id="LED_0_0" x="130" y="230" class="st6" width="8" height="14"/>
-        <rect id="LED_1_0" x="160" y="230" class="st6" width="8" height="14"/>
-        <rect id="LED_2_0" x="190" y="230" class="st6" width="8" height="14"/>
-        <rect id="LED_3_0" x="220" y="230" class="st6" width="8" height="14"/>
-        <rect id="LED_4_0" x="250" y="230" class="st6" width="8" height="14"/>
-        <rect id="LED_0_1" x="130" y="260" class="st6" width="8" height="14"/>
-        <rect id="LED_1_1" x="160" y="260" class="st6" width="8" height="14"/>
-        <rect id="LED_2_1" x="190" y="260" class="st6" width="8" height="14"/>
-        <rect id="LED_3_1" x="220" y="260" class="st6" width="8" height="14"/>
-        <rect id="LED_4_1" x="250" y="260" class="st6" width="8" height="14"/>
-        <rect id="LED_0_2" x="130" y="290" class="st6" width="8" height="14"/>
-        <rect id="LED_1_2" x="160" y="290" class="st6" width="8" height="14"/>
-        <rect id="LED_2_2" x="190" y="290" class="st6" width="8" height="14"/>
-        <rect id="LED_3_2" x="220" y="290" class="st6" width="8" height="14"/>
-        <rect id="LED_4_2" x="250" y="290" class="st6" width="8" height="14"/>
-        <rect id="LED_0_3" x="130" y="320" class="st6" width="8" height="14"/>
-        <rect id="LED_1_3" x="160" y="320" class="st6" width="8" height="14"/>
-        <rect id="LED_2_3" x="190" y="320" class="st6" width="8" height="14"/>
-        <rect id="LED_3_3" x="220" y="320" class="st6" width="8" height="14"/>
-        <rect id="LED_4_3" x="250" y="320" class="st6" width="8" height="14"/>
-        <rect id="LED_0_4" x="130" y="350" class="st6" width="8" height="14"/>
-        <rect id="LED_1_4" x="160" y="350" class="st6" width="8" height="14"/>
-        <rect id="LED_2_4" x="190" y="350" class="st6" width="8" height="14"/>
-        <rect id="LED_3_4" x="220" y="350" class="st6" width="8" height="14"/>
-        <rect id="LED_4_4" x="250" y="350" class="st6" width="8" height="14"/>
+        <rect id="LED_0_0" x="154" y="113" class="st6" width="10" height="20"/>
+        <rect id="LED_1_0" x="200" y="113" class="st6" width="10" height="20"/>
+        <rect id="LED_2_0" x="246" y="113" class="st6" width="10" height="20"/>
+        <rect id="LED_3_0" x="292" y="113" class="st6" width="10" height="20"/>
+        <rect id="LED_4_0" x="338" y="113" class="st6" width="10" height="20"/>
+        <rect id="LED_0_1" x="154" y="157" class="st6" width="10" height="20"/>
+        <rect id="LED_1_1" x="200" y="157" class="st6" width="10" height="20"/>
+        <rect id="LED_2_1" x="246" y="157" class="st6" width="10" height="20"/>
+        <rect id="LED_3_1" x="292" y="157" class="st6" width="10" height="20"/>
+        <rect id="LED_4_1" x="338" y="157" class="st6" width="10" height="20"/>
+        <rect id="LED_0_2" x="154" y="201" class="st6" width="10" height="20"/>
+        <rect id="LED_1_2" x="200" y="201" class="st6" width="10" height="20"/>
+        <rect id="LED_2_2" x="246" y="201" class="st6" width="10" height="20"/>
+        <rect id="LED_3_2" x="292" y="201" class="st6" width="10" height="20"/>
+        <rect id="LED_4_2" x="338" y="201" class="st6" width="10" height="20"/>
+        <rect id="LED_0_3" x="154" y="248" class="st6" width="10" height="20"/>
+        <rect id="LED_1_3" x="200" y="248" class="st6" width="10" height="20"/>
+        <rect id="LED_2_3" x="246" y="248" class="st6" width="10" height="20"/>
+        <rect id="LED_3_3" x="292" y="248" class="st6" width="10" height="20"/>
+        <rect id="LED_4_3" x="338" y="248" class="st6" width="10" height="20"/>
+        <rect id="LED_0_4" x="154" y="292" class="st6" width="10" height="20"/>
+        <rect id="LED_1_4" x="200" y="292" class="st6" width="10" height="20"/>
+        <rect id="LED_2_4" x="246" y="292" class="st6" width="10" height="20"/>
+        <rect id="LED_3_4" x="292" y="292" class="st6" width="10" height="20"/>
+        <rect id="LED_4_4" x="338" y="292" class="st6" width="10" height="20"/>
     </g>
     </svg>`;
 
