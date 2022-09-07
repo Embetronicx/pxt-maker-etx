@@ -363,6 +363,16 @@ namespace pxsim.led {
         runtime.queueDisplayUpdate()
     }
 
+    export function showAnimation(leds: Image, interval: number): void {
+        interval |= 0;
+        ImageMethods.scrollImage(leds, 5, interval);
+    }
+
+    export function showLedPattern(leds: Image, interval: number): void {
+        interval |= 0;
+        showAnimation(leds, interval);
+    }
+
     export function pointBrightness(x: number, y: number): number {
         x |= 0;
         y |= 0;
