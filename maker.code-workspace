@@ -9,5 +9,16 @@
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings": {
+		"files.associations": {
+            "system_error": "cpp",
+            "xlocale": "cpp",
+            "thread": "cpp",
+            "xlocmon": "cpp",
+            "xlocnum": "cpp",
+            "xloctime": "cpp",
+            "mutex.h": "c"
+        }
+	}
 }
